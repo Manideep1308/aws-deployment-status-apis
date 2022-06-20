@@ -30,4 +30,4 @@ def func():
 
 
 
-app.run(port=2003, host="0.0.0.0") 
+app.run(port=2003, host="0.0.0.0",debug=True) 

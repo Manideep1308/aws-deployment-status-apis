@@ -16,4 +16,4 @@ def func():
 
  return list
 
-app.run(port=2004, host='0.0.0.0') 
+app.run(port=2004, host='0.0.0.0', debug=True) 
