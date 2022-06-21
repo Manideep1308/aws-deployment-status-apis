@@ -8,17 +8,18 @@ CORS(app)
 @app.route('/')
 def func():
 
-    subnetname =request.args.get('subnetname')
+    stackname =request.args.get('stackname')
    
     ec2 = boto3.client('ec2')
     response = ec2.describe_subnets(
         Filters=[
-        {
-            'Name': 'tag:aws-cdk:subnet-name',
-            'Values': [
-                str(subnetname)
-            ]
-        },
+        # {
+        #     'Name': 'tag:aws-cdk:subnet-name',
+        #     'Values': [
+        #         str(subnetname)
+        #     ]
+        # },
+        {"Name":"tag:aws:cloudformation:stack-name", "Values":[str(stackname)]}
         
     ]
 )
